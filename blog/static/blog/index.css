@@ -1,0 +1,39 @@
+.custom-card{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+.card-image{
+    width: 30vw;
+    
+}
+.custom-card-body{
+    margin-left: 2rem;
+}
+.text-small{
+    font-size: small;
+}
+@media only screen and (max-width: 800px) {
+    .masthead{
+        font-size: 1rem;
+    }
+    .custom-card{
+        flex-direction: column;
+        margin-left: 5vw;
+    }
+    .custom-card-body{
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    .card-title{
+        font-size: 1.5rem  !important;
+        margin-top: 1rem;
+    }
+    .card-image{
+        width: 90vw;
+    }
+  }

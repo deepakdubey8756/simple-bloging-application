@@ -1,0 +1,21 @@
+
+.card-image{
+    width: 50vw;
+    max-height: 300px;
+}
+
+@media only screen and (max-width: 800px) {
+    .container{
+        margin-left: 0rem  !important;
+    }
+    .card-body{
+        padding: 0 !important;
+    }
+    .card-image{
+        width: 90vw;
+    }
+    .image_credit{
+        margin-bottom: 2rem;
+        font-size: small;   
+    }
+  }

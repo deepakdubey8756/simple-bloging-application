@@ -1,0 +1,44 @@
+{% extends "./base.html" %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
+{% endblock %}
+{% block content %}
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h4 class="my-4 mt-3 text-black"> Welcome to this cybernetic, cyberbotic and cyber-synthetic age of si-fi</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class=" d-flex flex-wrap mt-3">
+        <!-- Blog Entries Column -->
+        {% for post in post_list %}
+        <div class="custom-card mb-4">
+            <div class="card-upper">
+                {% if post.image_url != "none" %}
+                <p class="card-text text-muted text-small">{{ post.created_on}} </p>
+                <img class="card-image" src={{post.image_url}} alt={{post.title}}>
+                
+                {% endif %}
+            </div>
+           <div class="custom-card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    {% if post.image_url == "none" %}
+                    <p class="card-text text-muted text-small">{{ post.author }} | {{post.created_on}}</p>
+                    {% else %}
+                    <p class="card-text text-muted text-small">{{ post.author }} </p>
+                    {% endif %}
+                    <p class="card-text">{{post.content|slice:":600" }}</p>
+                    <a href="{% url 'post_detail' post.slug  %}" class="cust_read_more cust_button">Read More &rarr;</a>
+            </div> 
+        </div>
+            {% endfor %}
+</div>
+{%endblock%}
