@@ -1,4 +1,4 @@
-# roketrakoon a simple tech blog
+# AutoBots a simple tech blog
 A simple bloging website made using `django`, and other stacks..
 
 # Features
