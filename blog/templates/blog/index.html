@@ -11,7 +11,7 @@
         <div class="row">
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h4 class="my-4 mt-3 text-black"> Welcome to this cybernetic, cyberbotic and cyber-synthetic age of si-fi</h4>
+                    <h4 class="my-4 mt-3 text-black"> Welcome to this cybernetic, cyberbotic and cyber-synthetic age of sci-fi</h4>
                 </div>
             </div>
         </div>
@@ -31,14 +31,29 @@
            <div class="custom-card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     {% if post.image_url == "none" %}
-                    <p class="card-text text-muted text-small">{{ post.author }} | {{post.created_on}}</p>
+                    <p class="card-text text-muted text-small">{{ post.author  }} | {{post.created_on}}</p>
                     {% else %}
                     <p class="card-text text-muted text-small">{{ post.author }} </p>
                     {% endif %}
-                    <p class="card-text">{{post.content|slice:":600" }}</p>
+                    <p class="card-text">{{post.content | slice:":600"| safe }}</p>
                     <a href="{% url 'post_detail' post.slug  %}" class="cust_read_more cust_button">Read More &rarr;</a>
             </div> 
         </div>
             {% endfor %}
 </div>
+
+{% if post_list.has_other_pages %}
+  <nav aria-label="Page navigation conatiner"></nav>
+  <ul class="pagination justify-content-center">
+    {% if post_list.has_previous %}
+    <li><a href="?page={{ post_list.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if post_list.has_next %}
+    <li><a href="?page={{ post_list.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+   {% endif %}
+  </ul>
+  </nav>
+</div>
+{% endif %}
+
 {%endblock%}

@@ -3,9 +3,20 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Comment
 from .forms import CommentForm
 from django.views import generic
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 def index(request):
     post_list = Post.objects.filter(status = 1).order_by('-created_on')
+    paginator  = Paginator(post_list, 1)
+    page = request.GET.get('page')
+    try:
+        post_list = paginator.page(page)
+    except PageNotAnInteger:
+        # if page is not an integer deliver the first group
+        post_list = paginator.page(1)
+    except EmptyPage:
+        # if page is out of range then deliver last page of reults;
+        post_list = paginator.page(paginator.num_pages)
     return render(request, "blog/index.html", {"post_list": post_list})
 
 
