@@ -35,24 +35,10 @@ It contains following views
 The following URLs will be defined for each view:
 
 ### /
- The URL for the index page to display Notes.
+ The URL for the index page to list all of the blogs.
 
-
-### /edit/<note_id>
-The URL for the Edit Note view, where <note_id> is the ID of the note to be edited.
-
-### deleteNote/<id>
- The URL for the Delete Note view, where <id> is the ID of the note to be deleted.
-
-
-### accounts/signup
-This url will signup user
-
-### accounts/login
-This url will login user
-
-### accounts/logout
-to logout user
+### /details/<slug:slug>
+The URL to display blog details.
 
 ## Conclusion:
-This design document outlines the basic structure of the note taking application that i have developed using Django. The application will allow users to create, view, edit, and delete notes. The models, views, templates, and URLs have been defined to provide a clear understanding of the functionalities that will be implemented in the application.
+This design document outlines the basic structure of the bloging application that i have developed using Django. I am using it personly to write blogs. Your can read it here: `url`
