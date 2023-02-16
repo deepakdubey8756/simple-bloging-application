@@ -1,16 +1,17 @@
 # AutoBots a simple tech blog
 A simple bloging website made using `django`, and other stacks..
-
+It contains commenting features and a beautiful ui made using bootstrap
 # Features
 It contains features like: 
 1. Blogs sorted based on how recent it is publised.
-2. Anonymous commenting feature so that anyone can comment on articles.
-
+2. Anonymous commenting feature so that allow anyone to comment on articles.
+3. Provided a preview feature so that admin will preview authenticity of comment before displaying it 
+to the page
 # Demo
 
 To get a demo of it's woking check this  link...
 
-![alt text](https://github.com/deepakdubey8756/simple-to-do/blob/main/asset/todo.png)
+![alt text](https://github.com/deepakdubey8756/simple-bloging-application/blob/main/assets/autobots.png)
 
 # Design
 This document provides a high-level overview of this application.
