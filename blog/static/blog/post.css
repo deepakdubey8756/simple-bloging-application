@@ -4,6 +4,12 @@
     max-height: 300px;
 }
 
+.commentBody p{ 
+    margin-top: -0.8rem;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    /* background-color: red; */
+}
 @media only screen and (max-width: 800px) {
     .container{
         margin-left: 0rem  !important;
